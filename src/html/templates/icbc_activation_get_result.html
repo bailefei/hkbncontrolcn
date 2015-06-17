@@ -1,0 +1,67 @@
+<script>
+    $(function () {
+        $("#tabs").tabs();
+        $("#startDate").datepicker();
+        $("#endDate").datepicker();
+        $("#btnExcel").button();
+    });
+</script>
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-search">搜寻帐号</a></li>
+        <li><a href="#tabs-result">搜寻结果</a></li>
+        <li><a href="#tabs-index">回主页</a></li>
+    </ul>
+
+    <div id="tabs-search">
+        <h2>搜寻帐号</h2>
+
+        <form action="icbc_activation_get_go.php#tabs-result" method="post">
+            <p>
+                <label for="startDate">Start Date:</label>
+                <input id="startDate" name="startDate" type="text" value="" />
+            </p>
+            <p>
+                <label for="endDate">End Date:</label>
+                <input id="endDate" name="endDate" type="text" value="" />
+            </p>
+            <input type="submit" value="搜寻">
+        </form>
+    </div>
+
+    <div id="tabs-result">
+        <h2>搜寻结果</h2>
+
+        {if isset($data.rows)}
+            <a id="btnExcel" href="icbc_activation_get_go.php?action=excel&startDate={$data.startDate}&endDate={$data.endDate}">下载试算表</a>
+
+            <p>总共: {$data.total}</p>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>激活帐号</th>
+                    <th>状态</th>
+                    <th>內容</th>
+                    <th>日期</th>
+                </tr>
+                {foreach from=$data.rows item=row}
+                <tr>
+                    <td>{$row.LogUser_Id}</td>
+                    <td>{$row.LogUser_Username}</td>
+                    <td>{$row.LogUser_Action}</td>
+                    <td>{$row.LogUser_Message}</td>
+                    <td>{$row.LogUser_CreateDate}</td>
+                </tr>
+                {/foreach}
+            </table>
+        {/if}
+
+        <p><i>更新时间: {$smarty.now|date_format:'%Y-%m-%d %H:%M:%S'}</i></p>
+    </div>
+
+
+    <div id="tabs-index">
+        <a href="index.php">回主页</a>
+    </div>
+</div>

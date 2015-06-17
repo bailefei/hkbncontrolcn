@@ -1,0 +1,82 @@
+CRUD a db table
+- search with like (text)
+- search by date picker (date)
+
+---------- DONE ----------
+20150101:
+Done. Start using fitnesse
+Done. deploy.sh: can manage deploy db to server different from web server
+
+20141226:
+Done. CRUD: Add sorting
+Done. Db->runQuery, runSelectQuery: Added $data for prepare statement
+Done. CRUD: Can input searching criteria
+Done. CRUD: Search result paging
+Done. Fixed Login template bug
+
+20141225:
+Done. Basic CRUD a DB table
+Done. Update install.php
+Skip. PDO singleton implementation. Second thought, I don't want to use singleton in that way. If problem found, try moving to a better design.
+Done. Update deploy.sh
+Done. Remove lib/framework/Controller.php
+Done. Remove ViewFactory.php
+Done. Merge mvcTemplate to mvc
+
+20141128:
+Done. Make app/db directory to handle each table in database
+Done. Make app/domain directory for business logic
+Done: Smart deployment problem: move the smart lib path setup to config.php
+Done. Updated install/index.php: move the install instruction from readme.txt to index.php
+Done. Db table name change to lowercase
+
+Done. fixed isLogin.inc.php bug
+
+Done. add renderWithData function to SmartyTemplateView.php
+Done. modified: deploy.sh
+Done. modified: install/index.php
+Done. add: src/index.php
+Done. add makeModel function to DBController.php
+Done. DateHelper: strtotime() timezone problem
+Done. Login, Logout pages
+
+Done. remove else part from autoload function so that if class file not found, script can continue
+
+Done. fitnesse installed, but still need more detail to try
+(http://192.168.0.112:8086/FrontPage.TestA?edit)
+
+Done. web base root redirect to index/view
+
+Done. template link to css, js problem.
+
+Done. development .htaccess not update? (Updated)
+
+Done. if no request action in index.php -> error
+
+Done. Add readme to help build the deployment environment
+
+Done. .htaccess path need to config for each server (Solved)
+
+Done. Found link security problems
+
+Done. Add .htaccess to app, config and lib directory
+
+Done. How to rollback description
+
+Done. Add config file
+
+Done. Setup template system (Smarty)
+
+Done. Controller need to pass data array to view
+
+Done. Create a view factory
+
+Done. DbController: if a database action requested, if not model created, create a new model according to the controller name
+
+Done. AppController: rename to DbController
+
+Done. Create TestModel class, make it usable in a browser
+
+Done. Route the http request to a controller
+
+Done. Run by browser on development machine
