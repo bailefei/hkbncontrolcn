@@ -35,8 +35,8 @@ dbServerPass=${webServerPass}
 #dbServerPrivateKey=${webServerPrivateKey}
 
 dbDatabase=${project}
-dbUser=hkbncontroluser
-dbPass=hkbncontrolpass
+dbUser=root
+dbPass=abc123
 
 
 ### Local Settings
