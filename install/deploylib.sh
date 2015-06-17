@@ -17,6 +17,7 @@ setSshVariables() {
     # if server authenticated by public/private key
     sshCmd="ssh ${userAtHost}"
     scpCmd="scp"
+    echo sshCmd
 
     # if server authenticated by password
     if [ -n "$pass" ]
